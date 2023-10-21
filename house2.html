@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7012 Franklin Court Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ... (your existing styles) ... */
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: 10% auto;
+            padding: 20px;
+            background-color: #fefefe;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Back button to navigate back to index.html -->
+    <button class="back-button">Back</button>
+
+    <!-- Modal for displaying enlarged images -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImage" style="width: 100%; height: auto;">
+        </div>
+    </div>
+
+    <!-- Your existing HTML content here -->
+    <div class="header">
+        <h1>7012 Franklin Court Details</h1>
+    </div>
+    <div class="container">
+        <div class="house-details">
+            <h2>7012 Franklin Court</h2>
+            <p>Discover the charm of this beautiful house located in a serene neighborhood. With spacious rooms, modern amenities, and a lovely backyard, this house offers the perfect blend of comfort and style.</p>
+            <h3>Key Features:</h3>
+            <ul>
+                <li>4 Bedrooms</li>
+                <li>3 Bathrooms</li>
+                <li>Modern Kitchen</li>
+                <li>Cozy Living Room</li>
+                <li>Private Garage</li>
+            </ul>
+            <h3>Additional Details:</h3>
+            <p>This house features high ceilings, large windows that bring in plenty of natural light, and a beautifully landscaped garden. It's conveniently located near schools, parks, and shopping centers.</p>
+            <div class="gallery">
+                <img src="https://cdn.discordapp.com/attachments/1162201844915916841/1165031694110310410/RobloxScreenShot20231020_163653676.png?ex=65455f51&is=6532ea51&hm=099a0ef19d0227fdb8e32b800e134d635651b2174be7b348b3cf400d05e0612f&" alt="Room 1">
+                <img src="URL_TO_ROOM_2_IMAGE" alt="Room 2">
+                <img src="URL_TO_ROOM_3_IMAGE" alt="Room 3">
+                <!-- Add more room images as needed -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get the back button
+        var backButton = document.querySelector(".back-button");
+
+        // When the back button is clicked, go back to the index.html page
+        backButton.onclick = function () {
+            window.location.href = "index.html";
+        }
+
+        // Get the modal and images
+        var modal = document.getElementById("myModal");
+        var images = document.querySelectorAll(".gallery img");
+        var modalImg = document.getElementById("modalImage");
+
+        // When an image is clicked, display it in the modal
+        images.forEach(function (img) {
+            img.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        // Get the close button in the modal
+        var span = document.querySelector(".close");
+
+        // When the close button is clicked, close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
